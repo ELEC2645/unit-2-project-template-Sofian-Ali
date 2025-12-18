@@ -8,7 +8,7 @@ static void remove_previous_input(void) { // clears leftover input
     while ((ch = getchar()) != '\n') { }
 }
 
-/* ------------------- SAFE NUMBER INPUT ------------------- */
+// SAFE NUMBER INPUT
 static int ask_number(double *out_number) {
     char buffer[128];
     char *endptr;
@@ -92,7 +92,6 @@ int get_valid_number(double *out_value, int allow_zero) {
             printf("Error: Zero is not allowed here.\n");
             continue;
         }
-
         *out_value = value;
         return 0; // success with fully validated value
     }

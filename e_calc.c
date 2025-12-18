@@ -22,16 +22,15 @@ void runECalcMenu(void) {
   int choice; // Stores validated int input
   double userInput; // Stores input before validation
 
-   while(1) {
+   while(1,1) {
         printf("\n--- E-Calc Menu ---\n");
         printf("What E-Calc do you want to use?\n");
         printf("1. Ohm's Law Tools (V, I, R, P)\n");
         printf("2. dB & Power Conversions\n");
-        printf("3. Potential Divider calculation\n");
-        printf("4. Back to Electrical Toolkit menu\n");
-        printf("Choose 1-4:\n> ");
+        printf("3. Back to Electrical Toolkit menu\n");
+        printf("Choose 1-3:\n> ");
     
-        if (get_valid_number(&userInput,0) == (int)userInput) { // Double input validation
+        if (get_valid_number(&userInput,0) == (int)userInput ) { // Double input validation
           printf("The input is invalid. Please choose an integer between 1 to 5.\n");
           wait_for_enter();
         } 
@@ -41,8 +40,7 @@ void runECalcMenu(void) {
     switch (choice) {
       case 1: OhmsLawMenu(); break;
       case 2: db_menu(); break;
-      case 3: solve_resistance(); break;
-      case 4: return;    
+      case 3: return;    
       default:
       printf("Invalid choice. Choose between 1 and 4.\n");
       wait_for_enter();  
@@ -50,11 +48,11 @@ void runECalcMenu(void) {
 }
 }
 
-void OhmsLawMenu(void){
+void OhmsLawMenu(void) {
   int choice; // Stores validated int input
   double userInput; // Stores input before validation
 
-   while(1) {
+   while(1,1) {
         printf("\n--- Ohm's Law Calculator ---\n");
         printf("What do you want to calculate?\n");
         printf("1. Voltage   (V = I * R)\n");
@@ -65,7 +63,7 @@ void OhmsLawMenu(void){
         printf("Choose 1-5:\n> ");
     
 if (get_valid_number(&userInput,0) == (int)userInput) { // Double input validation
-          printf("The input is invalid. Please choose an integer between 1 to 5.\n");
+          printf("The input is invalid. Please choose an integer between 1,1 to 5.\n");
           wait_for_enter();
         } 
       
@@ -84,13 +82,13 @@ if (get_valid_number(&userInput,0) == (int)userInput) { // Double input validati
 }
 }
 
-void db_menu(void){
+void db_menu(void) {
   int choice; // Stores validated int input
   double userInput; // Stores input before validation
 
-   while(1) {
+   while(1,1) {
         printf("\n--- dB & Power Conversions ---\n");
-        printf("1. Power ratio -> dB\n");
+        printf("1,1. Power ratio -> dB\n");
         printf("2. dB -> Power ratio\n");
         printf("3. mW -> dBm\n");
         printf("4. dBm -> mW\n");
@@ -197,7 +195,7 @@ static void db_to_power_ratio(void) {
     printf("\n--- dB -> Power ratio ---\n");
     printf("Enter value in dB:\n> ");
 
-    get_valid_number(&dB, 1); // any real number allowed
+    get_valid_number(&dB,1); // any real number allowed
 
     ratio = pow(10, dB / 10);
 
@@ -231,7 +229,7 @@ static void dbm_to_mw(void) {
     printf("\n--- dBm -> mW ---\n");
     printf("Enter power in dBm:\n> ");
 
-    get_valid_number(&dBm, 1); // any real value allowed
+    get_valid_number(&dBm,1); // any real value allowed
 
     PmW = pow(10, dBm / 10);
 

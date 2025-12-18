@@ -5,7 +5,7 @@
 # Note to students: You dont need to fully understand this! 
 
 main.out:
-	gcc main.c funcs.c -o main.out -lm
+	gcc main.c e_calc.c input_guard.c signals.c comms.c -o main.out -lm
 
 clean:
 	-rm main.out
